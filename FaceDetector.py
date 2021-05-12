@@ -12,6 +12,8 @@ from PIL import ImageDraw
 from collections import namedtuple
 
 def createModel():
+    #model has 93,697 parameters
+    #same intellectual horsepower as a lobster!
     model = Sequential()
     model.add(Conv2D(32, kernel_size=(3,3), input_shape=(None, None,1)))
     model.add(MaxPooling2D(pool_size=(2, 2)))
@@ -133,7 +135,7 @@ def runDetector(windowSize=60,displayThreshold=0.998):
     model.load_weights('FaceDetectorWeights.h5')
     count = 0
     while(True):
-        
+
         if count <= 5:
             count +=1
             continue
